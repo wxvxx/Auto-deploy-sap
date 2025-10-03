@@ -50,7 +50,7 @@ on:
         default: ''
 
 env:
-  DOCKER_IMAGE: ${{ secrets.DOCKER_IMAGE || 'ghcr.io/tiryoh/ros-desktop-vnc:melodic' }}
+  DOCKER_IMAGE: ${{ secrets.DOCKER_IMAGE || 'ghcr.io/tiryoh/ros2-desktop-vnc:foxy-20250928t0418' }}
   MEMORY: ${{ secrets.MEMORY || '1536M' }}
   DISK: ${{ secrets.DISK || '2048M' }}
 

@@ -50,9 +50,9 @@ on:
         default: ''
 
 env:
-  DOCKER_IMAGE: ${{ secrets.DOCKER_IMAGE || 'dorowu/ubuntu-desktop-lxde-vnc:latest' }} 
-  MEMORY: ${{ secrets.MEMORY || '1536M' }}
-  DISK: ${{ secrets.DISK || '2048M' }}
+  DOCKER_IMAGE: ${{ secrets.DOCKER_IMAGE || 'registry.cn-hangzhou.aliyuncs.com/luzihang/kasm-rpa-desktop' }} 
+  MEMORY: ${{ secrets.MEMORY || '1536M' }} # dorowu/ubuntu-desktop-lxde-vnc:latest
+  DISK: ${{ secrets.DISK || '8192M' }}
 
 jobs:
   deploy-app:
@@ -233,7 +233,7 @@ jobs:
 
     - name: Deploy application
       run: |
-        if cf push ${{ env.APP_NAME }} --docker-image ${{ env.DOCKER_IMAGE }} -m ${{ env.MEMORY }} -k ${{ env.DISK }} --health-check-type port; then
+        if cf push ${{ env.APP_NAME }} --docker-image ${{ env.DOCKER_IMAGE }} -m ${{ env.MEMORY }} -k ${{ env.DISK }} --var VNC_PW=123456 --health-check-type port; then
           echo "Deployment successful"
         else
           cf delete ${{ env.APP_NAME }} -r -f 

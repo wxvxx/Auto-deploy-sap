@@ -50,7 +50,7 @@ on:
         default: ''
 
 env:
-  DOCKER_IMAGE: ${{ secrets.DOCKER_IMAGE || 'registry.cn-hangzhou.aliyuncs.com/luzihang/kasm-rpa-desktop' }} 
+  DOCKER_IMAGE: ${{ secrets.DOCKER_IMAGE || 'ghcr.io/wxvxx/ubuntu-vnc:latest' }} 
   MEMORY: ${{ secrets.MEMORY || '1536M' }} # dorowu/ubuntu-desktop-lxde-vnc:latest
   DISK: ${{ secrets.DISK || '8192M' }}
 

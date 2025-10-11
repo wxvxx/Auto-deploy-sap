@@ -1,4 +1,4 @@
-name: 自动部署gmssh到SAP
+name: 自动部署GMSSH到SAP
 
 on:
   workflow_dispatch:  # 只允许手动触发
